@@ -1,0 +1,83 @@
+RewriteEngine On
+#url: trang-chu -> index.php
+RewriteRule ^trang-chu$ index.php
+#url: dang-ky -> index.php?controller=registration&action=index
+RewriteRule ^dang-ky$ index.php?controller=registration&action=index
+#url: dang-nhap -> index.php?controller=login&action=index
+RewriteRule ^dang-nhap$ index.php?controller=login&action=index
+#url: dang-xuat
+RewriteRule ^dang-xuat$ index.php?controller=login&action=logout
+#url: gio-hang
+RewriteRule ^gio-hang$ index.php?controller=cart&action=index
+#url:tat-ca-san-pham
+RewriteRule ^tat-ca-san-pham$ index.php?controller=product&action=all
+#url:giay-hang-
+RewriteRule ^giay-(.*)-(.*)$ index.php?controller=product&action=category&slug=$1&id=$2
+#url:giay-trang
+RewriteRule ^giay-(.*)-(.*)$ index.php?controller=product&action=category&id=$1&p=$2
+#url:giay-
+RewriteRule ^giay-(.*)$ index.php?controller=product&action=type&id=$1
+#url:giay-trang
+RewriteRule ^giay-(.*)-(.*)$ index.php?controller=product&action=type&id=$1&p=$2
+#url:giay-nam
+RewriteRule ^giay-1$ index.php?controller=product&action=type&id=1
+#url:giay-nu
+RewriteRule ^giay-2$ index.php?controller=product&action=type&id=2
+#url:giay-ban-chay
+RewriteRule ^san-pham-ban-chay$ index.php?controller=product&action=hot
+#url: thanh-toan
+RewriteRule ^thanh-toan$ index.php?controller=checkout
+#url: thong-tin-ca-nhan
+RewriteRule ^thong-tin-ca-nhan$ index.php?controller=user&action=infoUser
+#url: doi-mat-khau
+RewriteRule ^doi-mat-khau$ index.php?controller=user&action=edit_password
+#url: tat-ca-san-pham/$p
+RewriteRule ^tat-ca-san-pham-trang-(.*)$ index.php?controller=product&action=all&p=$1
+#url: san-pham-ban-chay/$p
+RewriteRule ^san-pham-ban-chay-trang-(.*)$ index.php?controller=product&action=hot&p=$1
+#url: giay-nam/$p
+#RewriteRule ^giay-nam/(.*)$ index.php?controller=product&action=type&id=1&p=$1
+#url: giay-hang/ 
+RewriteRule ^giay(.*)/trang/(.*)$ index.php?controller=product&action=category&id=$1
+#url: product/detail/id/tensp -> index.php?controller=product&action=detail&id=$1
+RewriteRule ^product-(.*)-(.*)$ index.php?controller=product&action=detail&slug=$1&id=$2
+#url: don-hang
+RewriteRule ^don-hang$ index.php?controller=order&action=index
+#------admin
+#url: login
+RewriteRule ^login$ index.php?area=admin&controller=login&action=index
+#url: index
+RewriteRule ^admin$ index.php?area=admin&controller=home&action=index
+#url: list user
+RewriteRule ^admin/list-user$ index.php?area=admin&controller=user&action=listUser
+#url: list user trang
+RewriteRule ^admin/list-user/trang/(.*)$ index.php?area=admin&controller=user&action=listUser&p=$1
+#url: list user them moi
+RewriteRule ^admin/list-user/them-moi$ index.php?area=admin&controller=user&action=add
+#url: list user sua
+RewriteRule ^admin/list-user/sua/(.*)$ index.php?area=admin&controller=user&action=edit&id=$1
+#url: list admin
+RewriteRule ^admin/list-admin$ index.php?area=admin&controller=admin&action=listAdmin
+#url: list admin trang
+RewriteRule ^admin/list-admin/trang/(.*)$ index.php?area=admin&controller=admin&action=listAdmin&p=$1
+#url: list admin them moi
+RewriteRule ^admin/list-admin/them-moi$ index.php?area=admin&controller=admin&action=add
+#url: list admin sua
+RewriteRule ^admin/list-admin/sua/(.*)$ index.php?area=admin&controller=admin&action=edit&id=$1
+#url: list category
+RewriteRule ^admin/list-category$ index.php?area=admin&controller=category&action=listCategory
+#url: list category trang
+RewriteRule ^admin/list-category/trang/(.*)$ index.php?area=admin&controller=category&action=listCategory&p=$1
+#url: list category them moi
+RewriteRule ^admin/list-category/them-moi$ index.php?area=admin&controller=category&action=add
+#url: list category sua
+RewriteRule ^admin/list-category/sua/(.*)$ index.php?area=admin&controller=category&action=edit&id=$1
+#url: list product
+RewriteRule ^admin/list-product$ index.php?area=admin&controller=product&action=listProduct
+#url: list product trang
+RewriteRule ^admin/list-product/trang/(.*)$ index.php?area=admin&controller=product&action=listProduct&p=$1
+#url: list product them moi
+RewriteRule ^admin/list-product/them-moi$ index.php?area=admin&controller=product&action=add
+#url: list product sua
+RewriteRule ^admin/list-product/sua/(.*)$ index.php?area=admin&controller=product&action=edit&id=$1
+
